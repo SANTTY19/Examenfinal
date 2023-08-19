@@ -1,0 +1,84 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Formulario de Solicitud
+    style.
+      /* Agrega tus estilos personalizados aquí si es necesario */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+      form {
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 600px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+      button[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button[type="submit"]:hover {
+        background-color: #45a049;
+      }
+  body
+    form(action="/submit", method="post", enctype="multipart/form-data")
+      label(for="nombre") Nombre y Apellido:
+      input(type="text", name="nombre", required)
+
+      label(for="correo") Correo Electrónico:
+      input(type="email", name="correo", required)
+
+      label(for="telefono") Teléfono:
+      input(type="tel", name="telefono", required)
+
+      label(for="cv") Currículum Vitae (PDF, DOC, DOCX):
+      input(type="file", name="cv", accept=".pdf,.doc,.docx", required)
+
+      label(for="carta") Carta de Presentación (PDF, DOC, DOCX):
+      input(type="file", name="carta", accept=".pdf,.doc,.docx", required)
+
+      label(for="puesto") Puesto Solicitado:
+      input(type="text", name="puesto", required)
+
+      label(for="experiencia") Experiencia Laboral:
+      textarea(name="experiencia", rows="4", required)
+
+      label(for="educacion") Educación:
+      textarea(name="educacion", rows="4", required)
+
+      label(for="habilidades") Habilidades:
+      textarea(name="habilidades", rows="4", required)
+
+      label(for="referencias") Referencias:
+      textarea(name="referencias", rows="4")
+
+      label(for="mensaje") Mensaje Adicional:
+      textarea(name="mensaje", rows="4")
+
+      button(type="submit") Enviar
